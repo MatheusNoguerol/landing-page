@@ -32,7 +32,28 @@ export default {
     },
 
     indicaNavItem(item) {
-      this.activeItem = item; // Atualiza o item ativo ao clicar em um link
+      this.activeItem = item;
+      
+      document.querySelector('#sobre').style.backgroundColor = '';
+      document.querySelector('#jornada').style.backgroundColor = '';
+      document.querySelector('#projetos').style.backgroundColor = '';
+      document.querySelector('#contato').style.backgroundColor = '';
+
+      if (item === 'About') {
+        document.querySelector('#sobre').style.backgroundColor = 'white';
+        document.querySelector('#sobre').style.borderRadius = '1.5em';
+      } else if (item === 'Journey') {
+        document.querySelector('#jornada').style.backgroundColor = 'white';
+        document.querySelector('#jornada').style.borderRadius = '1.5em';
+      } else if (item === 'Projects') {
+        document.querySelector('#projetos').style.backgroundColor = 'white';
+        document.querySelector('#projetos').style.borderRadius = '1.5em';
+      } else if (item === 'Contact') {
+        document.querySelector('#contato').style.backgroundColor = 'white';
+        document.querySelector('#contato').style.borderRadius = '1.5em';
+      }
+
+      
     }
   }
   
@@ -44,25 +65,24 @@ export default {
   <div id="app" style="">
     
     <b-container>
-      <b-row style="padding-bottom: 2em; padding-top: 4em; padding-right: 3em;" id="logo">
-        
-        <div style="position: fixed; top: 0; display: flex; z-index: 9999; padding-top: 2em;" class="nav" v-if="isMobile">
-          <b-col lg="2"><a href="#logo" :class="{ active: activeItem === 'NoG' }" @click="indicaNavItem('NoG')">NoG</a></b-col>
-          <b-col lg="1"><a href="#sobre" :class="{ active: activeItem === 'About' }" @click="indicaNavItem('About')">About</a></b-col>
-          <b-col lg="1"><a href="#jornada" :class="{ active: activeItem === 'Journey' }" @click="indicaNavItem('Journey')">Journey</a></b-col>
-          <b-col lg="1"><a href="#projetos" :class="{ active: activeItem === 'Projects' }" @click="indicaNavItem('Projects')">Projects</a></b-col>
-          <b-col lg="1"><a href="#contato" :class="{ active: activeItem === 'Contact' }" @click="indicaNavItem('Contact')">Contact</a></b-col>
-        </div>
+      <section>
+        <b-row style="padding-bottom: 12em; padding-top: 4em; padding-right: 3em;" id="logo">
+          <div style="position: fixed; top: 0; display: flex; z-index: 9999; padding-top: 2em; padding-left: 18.5em;" class="nav mx-auto" v-if="isMobile">
+            <b-col lg="2"><a href="#logo" class="gloria-hallelujah-regular" :class="{ active: activeItem === 'NoG' }" @click="indicaNavItem('NoG')">NoG</a></b-col>
+            <b-col lg="1"><a href="#sobre" :class="{ active: activeItem === 'About' }" @click="indicaNavItem('About')">About</a></b-col>
+            <b-col lg="1"><a href="#jornada" :class="{ active: activeItem === 'Journey' }" @click="indicaNavItem('Journey')">Journey</a></b-col>
+            <b-col lg="1"><a href="#projetos" :class="{ active: activeItem === 'Projects' }" @click="indicaNavItem('Projects')">Projects</a></b-col>
+            <b-col lg="1"><a href="#contato" :class="{ active: activeItem === 'Contact' }" @click="indicaNavItem('Contact')">Contact</a></b-col>
+          </div>
 
-        <div class="navbar" v-if="!isMobile">
-          <a href="#sobre" class="active">logo</a>
-          <a href="#jornada">Sobre</a>
-          <a href="#projetos">Serviços</a>
-          <a href="#contato">Contato</a>
-        </div>
-
-        
-      </b-row>
+          <div class="navbar" v-if="!isMobile">
+            <a href="#sobre" class="active">logo</a>
+            <a href="#jornada">Sobre</a>
+            <a href="#projetos">Serviços</a>
+            <a href="#contato">Contato</a>
+          </div>
+        </b-row>
+      </section>
       
       <section>
         <b-row>
@@ -171,37 +191,28 @@ export default {
       </section>
 
       <section v-if="isMobile">
-        <article id="sobre">
-          <b-row style="padding-top: 10em;  padding-left: 16em;" class="sobre-row">
-            <b-col lg="2" style="padding-top: 3em;">
+        <article id="sobre" class="mx-auto text-center" style="margin-bottom: 10em;">
+          <b-row style="margin-top: 20em;">
+            <b-col lg="6">
               <h4><b>ABOUT</b></h4>
             </b-col>
-            <b-col lg="10" style="padding-left: 7em;" id="colSobre">
-              <div class="colunaSobre">
-                
-                <p class="mobile-friendly-paragraph">Desenvolvedor fullstack com experiência nas tecnologias citadas acima bem como, NODE.js, diversas bibliotecas de JS, UI Design, UX Design e consumo de APIs REST. Apaixonado pelo desenvolvimento de aplicações de gestão empresarial, profissional e pessoal. Formando em Análise e Desenvolvimento de Sistemas e cursando Especialização em Flutter na Alura.</p>
-                
-              </div>
+
+            <b-col lg="6">
+              <p>Desenvolvedor fullstack com experiência nas tecnologias citadas acima bem como, NODE.js, diversas bibliotecas de JS, UI Design, UX Design e consumo de APIs REST. Apaixonado pelo desenvolvimento de aplicações de gestão empresarial, profissional e pessoal. Formando em Análise e Desenvolvimento de Sistemas e cursando Especialização em Flutter na Alura.</p>
             </b-col>
           </b-row>
-        </article> 
-        <article id="jornada">
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <h1>foi</h1>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
+        </article>
+
+        <article id="jornada" class="mx-auto text-center">
+          <b-row class="mx-auto my-auto text-center">
+            <b-col lg="6">
+              <h4><b>JORNADA</b></h4>
+            </b-col>
+
+            <b-col lg="6">
+              <img src="../public/jornada.png" title="MYSQL">
+            </b-col>
+          </b-row>
         </article>
 
         <article id="projetos">
@@ -255,7 +266,9 @@ export default {
   }
 
   .nav a{
-    padding: 1em;;
+    padding: 1em;
+    color: black;
+    text-decoration: none;
   }
 
   .nav a:hover{
@@ -263,6 +276,11 @@ export default {
     border-radius: 1.5em;
     padding: 1em;
   }
+
+  #allSobre{
+    padding: 2em;
+  }
+
   /* .navBar {
     display: flex;
     flex-direction: row;
@@ -416,5 +434,13 @@ export default {
     border-left: 1px solid black;
     height: 8em;
     padding-left: 10em;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+
+  .gloria-hallelujah-regular {
+    font-family: "Gloria Hallelujah", cursive;
+    font-weight: 400;
+    font-style: normal;
   }
 </style>
