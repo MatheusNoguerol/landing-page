@@ -15,7 +15,7 @@
     mounted() {
       this.isMobile = window.innerWidth < 992;
 
-      window.addEventListener('resize', this.handleResize);
+      window.addEventListener('resize', this.handleResize)
     },
     methods: {
       handleResize(){
@@ -25,30 +25,38 @@
       },
 
       indicaNavItem(item) {
-        this.activeItem = item;
+        this.activeItem = item
 
-        
-        
-        document.querySelector('#sobre').style.backgroundColor = '';
-        document.querySelector('#jornada').style.backgroundColor = '';
-        document.querySelector('#projetos').style.backgroundColor = '';
-        document.querySelector('#contato').style.backgroundColor = '';
+        document.querySelector('#sobre').style.backgroundColor = ''
+        document.querySelector('#jornada').style.backgroundColor = ''
+        document.querySelector('#projetos').style.backgroundColor = ''
+        document.querySelector('#contato').style.backgroundColor = ''
 
         if (item === 'About') {
-          document.querySelector('#sobre').style.backgroundColor = 'white';
-          document.querySelector('#sobre').style.borderRadius = '1.5em';
+          document.querySelector('#sobre').style.backgroundColor = 'white'
+          document.querySelector('#sobre').style.borderRadius = '1.5em'
         } else if (item === 'Journey') {
-          document.querySelector('#jornada').style.backgroundColor = 'white';
-          document.querySelector('#jornada').style.borderRadius = '1.5em';
+          document.querySelector('#jornada').style.backgroundColor = 'white'
+          document.querySelector('#jornada').style.borderRadius = '1.5em'
         } else if (item === 'Projects') {
-          document.querySelector('#projetos').style.backgroundColor = 'white';
-          document.querySelector('#projetos').style.borderRadius = '1.5em';
+          document.querySelector('#projetos').style.backgroundColor = 'white'
+          document.querySelector('#projetos').style.borderRadius = '1.5em'
         } else if (item === 'Contact') {
-          document.querySelector('#contato').style.backgroundColor = 'white';
-          document.querySelector('#contato').style.borderRadius = '1.5em';
+          document.querySelector('#contato').style.backgroundColor = 'white'
+          document.querySelector('#contato').style.borderRadius = '1.5em'
         }
 
         
+      },
+
+      limpaNavItem(){
+        let self = this
+
+        self.activeItem = 'NoG'
+        document.querySelector('#sobre').style.backgroundColor = ''
+        document.querySelector('#jornada').style.backgroundColor = ''
+        document.querySelector('#projetos').style.backgroundColor = ''
+        document.querySelector('#contato').style.backgroundColor = ''
       }
     }
     
@@ -59,14 +67,14 @@
 <template>
   <div id="app">
     <div id="menu-navegacao">
-      <b-navbar toggleable="lg" type="dark" variant="dark" style="position: fixed; width: 100%; z-index: 99999;">
+      <b-navbar toggleable="lg" type="dark" variant="dark" style="width: 100%; z-index: 99999; opacity: .9; margin-bottom: 2em;">
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
         <b-collapse id="nav-collapse" v-if="!isMobile" class="d-flex text-center justify-content-center align-items-center" is-nav>
           <b-navbar-nav>
             <b-navbar-nav>
-              <b-nav-item href="#logo" id="nog">NoG</b-nav-item>
+              <b-nav-item href="#logo" id="nog" @click="limpaNavItem()"><a style="color: white;">NoG</a></b-nav-item>
               <b-nav-item href="#about"><a :class="{ active: activeItem === 'About' }" @click="indicaNavItem('About')">About</a></b-nav-item>
               <b-nav-item href="#jornada"><a :class="{ active: activeItem === 'Journey' }" @click="indicaNavItem('Journey')">Journey</a></b-nav-item>
               <b-nav-item href="#projetos"><a :class="{ active: activeItem === 'Projects' }" @click="indicaNavItem('Projects')">Projects</a></b-nav-item>
@@ -78,7 +86,7 @@
         <b-collapse id="nav-collapse" v-if="isMobile" is-nav>
           <b-navbar-nav>
             <b-navbar-nav>
-              <b-nav-item href="#logo" id="nog">NoG</b-nav-item>
+              <b-nav-item href="#logo" id="nog" @click="limpaNavItem()"><a style="color: white;">NoG</a></b-nav-item>
               <b-nav-item href="#sobre"><a :class="{ active: activeItem === 'About' }" @click="indicaNavItem('About')">About</a></b-nav-item>
               <b-nav-item href="#jornada"><a :class="{ active: activeItem === 'Journey' }" @click="indicaNavItem('Journey')">Journey</a></b-nav-item>
               <b-nav-item href="#projetos"><a :class="{ active: activeItem === 'Projects' }" @click="indicaNavItem('Projects')">Projects</a></b-nav-item>
@@ -87,6 +95,24 @@
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
+    </div>
+
+    <div>
+      <b-row>
+        <b-col v-if="isMobile">
+          <a alt="Ir para início da página" title="Ir para início da página" href="#menu-navegacao" style="position:fixed;width:40px;height:40px;bottom:40px;right:40px;text-align:center;font-size:30px;;
+            z-index:1000;" target="_self">
+                <b-icon icon="arrow-up" style="color: white;" animation="cylon-vertical" font-scale="1"></b-icon>
+            </a>
+        </b-col>
+
+        <b-col v-if="!isMobile" style="margin-right: 3em;">
+          <a alt="Ir para início da página" title="Ir para início da página" href="#menu-navegacao" style="position:fixed;width:40px;height:40px;bottom:40px;right:40px;text-align:center;font-size:30px;;
+            z-index:1000;" target="_self">
+                <b-icon icon="arrow-up" style="color: white;" animation="cylon-vertical" font-scale="1"></b-icon>
+            </a>
+        </b-col>
+      </b-row>
     </div>
 
     <b-container>
@@ -125,7 +151,7 @@
         </b-row>
       </section>
 
-      <section id="about" style="padding-top: 1em; margin-top: 4em;">
+      <section id="about" style="padding-top: 5em; margin-top: 4em;">
         <article class="mx-auto text-center" style="margin-bottom: 30em;">
           <b-row style="margin-top: 20em; margin-bottom: 10em;" id="sobre">
             <b-col lg="6" style="margin-top: 3em;">
@@ -138,7 +164,7 @@
           </b-row>
         </article>
       </section>
-
+      
       <section id="jornada">
         <article class="mx-auto text-center">
           <b-row style="padding-top: 5em;">
@@ -146,8 +172,8 @@
               <h4><b>JORNADA</b></h4>
             </b-col>
 
-            <b-col lg="6" style="margin-right: .0005em;">
-              <img src="../public/jornada.png" title="Jornada" class="w-100 img-fluid rounded" style="margin-bottom: .2em;">
+            <b-col lg="6">
+              <img src="../public/jornada.png" title="Jornada" class="w-100 img-fluid rounded" style="margin-bottom: .2em; padding-right: .9em;">
             </b-col>
           </b-row>
         </article>
