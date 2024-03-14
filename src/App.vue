@@ -1,92 +1,98 @@
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
 
-export default {
-  name: 'App',
-  components: {
-    // HelloWorld,
-  },
-  data(){
-    return{
-      isMobile: false,
-      activeItem: 'NoG',
-    }
-  },
-  mounted() {
-    this.isMobile = window.innerWidth;
-
-    window.addEventListener('resize', this.handleResize);
-  },
-  methods: {
-    handleResize(){
-      let self = this
-
-      self.isMobile = window.innerWidth > 600
+  export default {
+    name: 'App',
+    components: {
+      // HelloWorld,
     },
-
-    beforeDestroy() {
-      let self = this
-
-      window.removeEventListener('resize', self.handleResize)
-    },
-
-    indicaNavItem(item) {
-      this.activeItem = item;
-      
-      document.querySelector('#sobre').style.backgroundColor = '';
-      document.querySelector('#jornada').style.backgroundColor = '';
-      document.querySelector('#projetos').style.backgroundColor = '';
-      document.querySelector('#contato').style.backgroundColor = '';
-
-      if (item === 'About') {
-        document.querySelector('#sobre').style.backgroundColor = 'white';
-        document.querySelector('#sobre').style.borderRadius = '1.5em';
-      } else if (item === 'Journey') {
-        document.querySelector('#jornada').style.backgroundColor = 'white';
-        document.querySelector('#jornada').style.borderRadius = '1.5em';
-      } else if (item === 'Projects') {
-        document.querySelector('#projetos').style.backgroundColor = 'white';
-        document.querySelector('#projetos').style.borderRadius = '1.5em';
-      } else if (item === 'Contact') {
-        document.querySelector('#contato').style.backgroundColor = 'white';
-        document.querySelector('#contato').style.borderRadius = '1.5em';
+    data(){
+      return{
+        isMobile: false,
+        activeItem: 'NoG',
       }
+    },
+    mounted() {
+      this.isMobile = window.innerWidth < 992;
 
-      
+      window.addEventListener('resize', this.handleResize);
+    },
+    methods: {
+      handleResize(){
+        let self = this
+
+        self.isMobile = window.innerWidth < 992
+      },
+
+      indicaNavItem(item) {
+        this.activeItem = item;
+
+        
+        
+        document.querySelector('#sobre').style.backgroundColor = '';
+        document.querySelector('#jornada').style.backgroundColor = '';
+        document.querySelector('#projetos').style.backgroundColor = '';
+        document.querySelector('#contato').style.backgroundColor = '';
+
+        if (item === 'About') {
+          document.querySelector('#sobre').style.backgroundColor = 'white';
+          document.querySelector('#sobre').style.borderRadius = '1.5em';
+        } else if (item === 'Journey') {
+          document.querySelector('#jornada').style.backgroundColor = 'white';
+          document.querySelector('#jornada').style.borderRadius = '1.5em';
+        } else if (item === 'Projects') {
+          document.querySelector('#projetos').style.backgroundColor = 'white';
+          document.querySelector('#projetos').style.borderRadius = '1.5em';
+        } else if (item === 'Contact') {
+          document.querySelector('#contato').style.backgroundColor = 'white';
+          document.querySelector('#contato').style.borderRadius = '1.5em';
+        }
+
+        
+      }
     }
+    
   }
-  
-}
 </script>
 
 
 <template>
-  <div id="app" style="">
-    
-    <b-container>
-      <section>
-        <b-row style="padding-bottom: 12em; padding-top: 4em; padding-right: 3em;" id="logo">
-          <div style="position: fixed; top: 0; display: flex; z-index: 9999; padding-top: 2em; padding-left: 18.5em;" class="nav mx-auto" v-if="isMobile">
-            <b-col lg="2"><a href="#logo" class="gloria-hallelujah-regular" :class="{ active: activeItem === 'NoG' }" @click="indicaNavItem('NoG')">NoG</a></b-col>
-            <b-col lg="1"><a href="#sobre" :class="{ active: activeItem === 'About' }" @click="indicaNavItem('About')">About</a></b-col>
-            <b-col lg="1"><a href="#jornada" :class="{ active: activeItem === 'Journey' }" @click="indicaNavItem('Journey')">Journey</a></b-col>
-            <b-col lg="1"><a href="#projetos" :class="{ active: activeItem === 'Projects' }" @click="indicaNavItem('Projects')">Projects</a></b-col>
-            <b-col lg="1"><a href="#contato" :class="{ active: activeItem === 'Contact' }" @click="indicaNavItem('Contact')">Contact</a></b-col>
-          </div>
+  <div id="app">
+    <div id="menu-navegacao">
+      <b-navbar toggleable="lg" type="dark" variant="dark" style="position: fixed; width: 100%; z-index: 99999;">
 
-          <div class="navbar" v-if="!isMobile">
-            <a href="#sobre" class="active">logo</a>
-            <a href="#jornada">Sobre</a>
-            <a href="#projetos">Serviços</a>
-            <a href="#contato">Contato</a>
-          </div>
-        </b-row>
-      </section>
-      
-      <section>
-        <b-row>
-          <b-col lg="6" class="order-lg-1 text-center" style="padding-top: 100px;">
+        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+
+        <b-collapse id="nav-collapse" v-if="!isMobile" class="d-flex text-center justify-content-center align-items-center" is-nav>
+          <b-navbar-nav>
+            <b-navbar-nav>
+              <b-nav-item href="#logo" id="nog">NoG</b-nav-item>
+              <b-nav-item href="#about"><a :class="{ active: activeItem === 'About' }" @click="indicaNavItem('About')">About</a></b-nav-item>
+              <b-nav-item href="#jornada"><a :class="{ active: activeItem === 'Journey' }" @click="indicaNavItem('Journey')">Journey</a></b-nav-item>
+              <b-nav-item href="#projetos"><a :class="{ active: activeItem === 'Projects' }" @click="indicaNavItem('Projects')">Projects</a></b-nav-item>
+              <b-nav-item href="#contato"><a :class="{ active: activeItem === 'Contact' }" @click="indicaNavItem('Contact')">Contact</a></b-nav-item>
+            </b-navbar-nav>
+          </b-navbar-nav>
+        </b-collapse>
+        
+        <b-collapse id="nav-collapse" v-if="isMobile" is-nav>
+          <b-navbar-nav>
+            <b-navbar-nav>
+              <b-nav-item href="#logo" id="nog">NoG</b-nav-item>
+              <b-nav-item href="#sobre"><a :class="{ active: activeItem === 'About' }" @click="indicaNavItem('About')">About</a></b-nav-item>
+              <b-nav-item href="#jornada"><a :class="{ active: activeItem === 'Journey' }" @click="indicaNavItem('Journey')">Journey</a></b-nav-item>
+              <b-nav-item href="#projetos"><a :class="{ active: activeItem === 'Projects' }" @click="indicaNavItem('Projects')">Projects</a></b-nav-item>
+              <b-nav-item href="#contato"><a :class="{ active: activeItem === 'Contact' }" @click="indicaNavItem('Contact')">Contact</a></b-nav-item>
+            </b-navbar-nav>
+          </b-navbar-nav>
+        </b-collapse>
+      </b-navbar>
+    </div>
+
+    <b-container>
+      <section id="logo">
+        <b-row style="padding-top: 10em;">
+          <b-col lg="6" class="order-lg-1 text-center" style="padding-top: 9em;">
             <img class="img-fluid rounded" style="transform: scale(1.7); height: 200px;" src="../public/minhaFoto2.png" id="minhaFoto" alt="Foto pessoal" title="Foto pessoal">
           </b-col>
 
@@ -119,81 +125,10 @@ export default {
         </b-row>
       </section>
 
-      <section v-if="!isMobile"> 
-        <article id="sobre">
-          <b-row class="pt-4">
-            <b-col lg="1">
-              <h4><b>ABOUT <hr class="bg-secondary"></b></h4> 
-            </b-col>
-          
-            <b-col lg="10">
-              <p>Desenvolvedor fullstack com experiência nas tecnologias citadas acima bem como, NODE.js, diversas bibliotecas de JS, UI Design, UX Design e consumo de APIs REST. Apaixonado pelo desenvolvimento de aplicações de gestão empresarial, profissional e pessoal. Formando em Análise e Desenvolvimento de Sistemas e cursando Especialização em Flutter na Alura.</p>
-            </b-col>
-          </b-row>
-        </article>
-
-        <article id="jornada">
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <h1>foi</h1>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-        </article>
-
-        <article id="projetos">
-          <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <h1>oi</h1>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-        </article>
-
-        <article id="contato">
-          <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <h1>hehe</h1>
-            <br>
-            <br>
-            <br>
-            <br>
-        </article>
-      </section>
-
-      <section v-if="isMobile">
-        <article id="sobre" class="mx-auto text-center" style="margin-bottom: 10em;">
-          <b-row style="margin-top: 20em;">
-            <b-col lg="6">
+      <section id="about" style="padding-top: 1em; margin-top: 4em;">
+        <article class="mx-auto text-center" style="margin-bottom: 30em;">
+          <b-row style="margin-top: 20em; margin-bottom: 10em;" id="sobre">
+            <b-col lg="6" style="margin-top: 3em;">
               <h4><b>ABOUT</b></h4>
             </b-col>
 
@@ -202,20 +137,24 @@ export default {
             </b-col>
           </b-row>
         </article>
+      </section>
 
-        <article id="jornada" class="mx-auto text-center">
-          <b-row class="mx-auto my-auto text-center">
-            <b-col lg="6">
+      <section id="jornada">
+        <article class="mx-auto text-center">
+          <b-row style="padding-top: 5em;">
+            <b-col lg="6" style="margin-top: 10em;">
               <h4><b>JORNADA</b></h4>
             </b-col>
 
-            <b-col lg="6">
-              <img src="../public/jornada.png" title="MYSQL">
+            <b-col lg="6" style="margin-right: .0005em;">
+              <img src="../public/jornada.png" title="Jornada" class="w-100 img-fluid rounded" style="margin-bottom: .2em;">
             </b-col>
           </b-row>
         </article>
+      </section>
 
-        <article id="projetos">
+      <section id="projetos">
+        <article style="margin-top: 28em;">
           <br>
             <br>
             <br>
@@ -233,8 +172,10 @@ export default {
             <br>
             <br>
         </article>
+      </section>
 
-        <article id="contato">
+      <section id="contato">
+        <article style="margin-top: 28em;">
           <br>
             <br>
             <br>
@@ -261,57 +202,22 @@ export default {
 <style scoped>
   .active{
     background-color: white;
-    border-radius: 1.5em;
-    padding: 1em;
+    border-radius: 1.2em;
+    padding: .4em;
   }
-
-  .nav a{
-    padding: 1em;
-    color: black;
+  
+  div#menu-navegacao a{
     text-decoration: none;
-  }
-
-  .nav a:hover{
-    background-color: white;
-    border-radius: 1.5em;
-    padding: 1em;
-  }
-
-  #allSobre{
-    padding: 2em;
-  }
-
-  /* .navBar {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: rap;
-    text-align: center;
-    position: fixed;
-    top: 0;
-    margin-top: .8em;
-    left: 0;
-    width: 100%;
-    z-index: 1000; 
-    background-color: linear-gradient(#469cfc, #3f5efb, #469cfc); 
-  } */
-
-  a.link-navbar {
-    text-decoration: none;
-    background-color: white;
-    padding: 0.8em;
-    border-radius: 1em;
     text-transform: none;
   }
 
-  a.link-navbar:hover {
+  div#menu-navegacao a:hover{
     color: linear-gradient(#469cfc, #3f5efb, #469cfc);
-    padding: 2em;
-    border-radius: 1em;
-    text-decoration: none;
-    text-transform: none;
+    font-weight: bolder;
+    text-decoration: underline;
   }
 
-  section #saudacao{
+  #saudacao{
     font-family: "Protest Strike", sans-serif;
     color: white;
     font-style: normal;
@@ -329,6 +235,15 @@ export default {
     }
   }
 
+  #apresentacao{
+    color: white;
+    font-family: "Protest Strike", sans-serif;
+  }
+
+  .animate-slide-right{
+    animation: slideInRight 2s ease forwards;
+  }
+
   @keyframes slideInRight {
     from {
       transform: translateX(100%);
@@ -340,29 +255,22 @@ export default {
     }
   }
 
-  .animate-slide-right{
-    animation: slideInRight 2s ease forwards;
-  }
+  @import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
 
-  #apresentacao{
-    color: white;
+  #nog {
     font-family: "Protest Strike", sans-serif;
-    /* background-color: linear-gradient(to bottom right, #ff7e5f, #feb47b); */
+    font-weight: 400;
+    font-style: bolder;
+    color: white;
+    font-size: 1.2rem;
   }
 
-  .ocupation {
+  .ocupation{
     font-family: "Protest Strike", sans-serif;
     font-weight: 400;
     font-style: bolder;
     color: white;
     font-size: 3rem;
-  }
-
-  .technology img {
-    height: 5rem;
-    background-color: white;
-    margin: 0.1em;
-    border-radius: 1em;
   }
 
   div#container-technology{
@@ -371,76 +279,10 @@ export default {
     flex-wrap: wrap;
   } 
 
-  /* section#about */
-
-  @media only screen and (max-width: 600px) {
-    div#container-technology {
-      flex-direction: column;
-      padding-right: 1em;
-    }
-
-    img#minhaFoto{
-      padding-bottom: 2em;
-    }
-
-    div.colunaSobre{
-      padding-left: 1em;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2.5rem;
-    }
-
-    #colSobre{
-      padding-left: 1em
-    }
-
-    .sobre-row {
-      padding-top: 3em;
-      padding-left: 1em; 
-    }
-
-    .navbar {
-      overflow: hidden;
-      background-color: #2b2b2bbc;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 9999;
-    }
-
-    .navbar a {
-      float: left;
-      display: block;
-      color: #f2f2f2;
-      text-align: center;
-      padding: 14px 20px;
-      text-decoration: none;
-    }
-
-    .navbar a:hover {
-      background-color: #ddd;
-      border-radius: .2em;
-      color: black;
-    }
-
-    .navbar a.active {
-      background-color: #4CAF50;
-      color: white;
-    }
-  }
-
-  .colunaSobre{
-    border-left: 1px solid black;
-    height: 8em;
-    padding-left: 10em;
-  }
-
-  @import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
-
-  .gloria-hallelujah-regular {
-    font-family: "Gloria Hallelujah", cursive;
-    font-weight: 400;
-    font-style: normal;
+  .technology img {
+    height: 5rem;
+    background-color: white;
+    margin: 0.1em;
+    border-radius: 1em;
   }
 </style>
