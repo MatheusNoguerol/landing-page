@@ -2,11 +2,13 @@
 <script>
 import LandingNavbar from './components/LandingNavbar.vue'
 import LandingHome from './components/LandingHome.vue'
+import LandingAbout from './components/LandingAbout.vue'
   export default {
     name: 'App',
     components: {
       LandingNavbar,
       LandingHome,
+      LandingAbout,
     },
     data(){
       return{
@@ -26,27 +28,15 @@ import LandingHome from './components/LandingHome.vue'
 
 <template>
   <div id="app">
-    <LandingNavbar />
+    <LandingNavbar/>
 
     <section id="home">
       <LandingHome/>
     </section>
 
-    <!-- <section id="about">
-      <h1>About</h1>
-      <p>Saiba mais sobre nós.</p>
-        <article class="text-center">
-          <b-row id="sobre">
-            <b-col lg="4">
-              <h4><b>ABOUT</b></h4>
-            </b-col>
-
-            <b-col lg="6">
-              <p>Desenvolvedor fullstack com experiência nas tecnologias citadas acima bem como, NODE.js, diversas bibliotecas de JS, UI Design, UX Design e consumo de APIs REST. Apaixonado pelo desenvolvimento de aplicações de gestão empresarial, profissional e pessoal. Formando em Análise e Desenvolvimento de Sistemas e cursando Especialização em Flutter na Alura.</p>
-            </b-col>
-          </b-row>
-        </article>
-    </section> -->
+    <section id="sobre">
+      <landingAbout/>
+    </section>
 
     <!-- <section id="projects">
       <h1>Features</h1>
@@ -106,5 +96,8 @@ import LandingHome from './components/LandingHome.vue'
 </template>
 
 <style>
-    
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+  *{
+    font-family: 'JetBrains Mono';
+  }
 </style>
