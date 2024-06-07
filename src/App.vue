@@ -3,12 +3,14 @@
 import LandingNavbar from './components/LandingNavbar.vue'
 import LandingHome from './components/LandingHome.vue'
 import LandingAbout from './components/LandingAbout.vue'
+import LandingContact from './components/LandingContact.vue'
   export default {
     name: 'App',
     components: {
       LandingNavbar,
       LandingHome,
       LandingAbout,
+      LandingContact
     },
     data(){
       return{
@@ -60,26 +62,9 @@ import LandingAbout from './components/LandingAbout.vue'
     </section> -->
 
     
-    <!-- <section id="contact">
-      <h1>Contact</h1>
-      <p>Entre em contato conosco.</p>
-      
-      .
-      .
-      .
-      .
-      .
-      .
-      .
-      .
-      .
-      .
-      .
-      .
-      .
-      .
-      .
-    </section> -->
+    <section id="contact">
+      <landingContact/>>
+    </section>
     
 
     <div>
