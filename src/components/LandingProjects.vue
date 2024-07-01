@@ -50,7 +50,7 @@
                                 <b-card-title class="text-center">EDUCA TERRA CORTESIA</b-card-title>
                                 <b-card-sub-title class="mb-4 text-center">Gestão de cortesia em evento</b-card-sub-title>
                                 <b-card-text>
-                                    Aplicação para gerir e divulgar brindes a serem distribuídos em eventos via QR-CODE, em parceria com um projeto de agroecologia que residem no bairro onde moro.
+                                    Aplicação para gerir e divulgar brindes a serem distribuídos em eventos via QR-CODE, em parceria com um projeto de agroecologia que reside no bairro onde moro.
                                 </b-card-text>
                             </b-card-body>
 
@@ -61,8 +61,8 @@
                             </b-list-group>
 
                             <b-card-body>
-                                <a href="https://erpdev.petpeloazul.com.br/" target="_blank" class="card-link">Site/Sistema</a>
-                                <a href="https://github.com/MatheusNoguerol/MatheusDoTaxi" target="_blank" class="card-link">Repositório</a>
+                                <a href="https://educaterracortesia.petpeloazul.com.br/" target="_blank" class="card-link">Site/Sistema</a>
+                                <a href="https://github.com/MatheusNoguerol/landing-page-pac-cortesia" target="_blank" class="card-link">Repositório</a>
                             </b-card-body>
 
                             <b-card-footer class="text-center"><small>Acesse os links para melhor visualização!</small></b-card-footer>
@@ -77,7 +77,7 @@
 
                             <b-card-body>
                                 <b-card-title class="text-center">PORTFÓLIO PESSOAL</b-card-title>
-                                <b-card-sub-title class="mb-4 text-center">Apresenção de projetos</b-card-sub-title>
+                                <b-card-sub-title class="mb-4 text-center">Apresentação de projetos</b-card-sub-title>
                                 <b-card-text>
                                     Portfólio desenvolvido com o intuíto de apresentar de forma objetiva os projetos desenvolvidos por mim, com possibilidade de visualizar rapidamente tanto a aplicação quanto o código. 
                                 </b-card-text>
@@ -90,7 +90,7 @@
                             </b-list-group>
 
                             <b-card-body class="text-center">
-                                <a href="https://github.com/MatheusNoguerol/MatheusDoTaxi" target="_blank" class="card-link">Repositório</a>
+                                <a href="https://github.com/MatheusNoguerol/landing-page" target="_blank" class="card-link">Repositório</a>
                             </b-card-body>
 
                             <b-card-footer class="text-center"><small>Acesse os links para melhor visualização!</small></b-card-footer>

@@ -19,35 +19,35 @@
         <b-row class="mt-2 text-center">
           <b-col>
             <div class="text-center d-inline-block squad">
-              <i class="fa-brands fa-2x fa-laravel p-4"></i>
+              <i class="fa-brands fa-2x fa-laravel p-5"></i>
               <div>Laravel</div>
             </div>
             <div class="text-center d-inline-block squad">
-              <i class="fa-brands fa-2x fa-php p-4"></i>
+              <i class="fa-brands fa-2x fa-php p-5"></i>
               <div>PHP</div>
             </div>
             <div class="text-center d-inline-block squad">
-              <i class="fa-solid fa-2x fa-database p-4"></i>
+              <i class="fa-solid fa-2x fa-database p-5"></i>
               <div>MYSQL</div>
             </div>
             <div class="text-center d-inline-block squad">
-              <i class="fa-brands fa-2x fa-js p-4"></i>
+              <i class="fa-brands fa-2x fa-js p-5"></i>
               <div>JavaScript</div>
             </div>
             <div class="text-center d-inline-block squad">
-              <i class="fa-brands fa-2x fa-vuejs p-4"></i>
+              <i class="fa-brands fa-2x fa-vuejs p-5"></i>
               <div>Vue.js</div>
             </div>
             <div class="text-center d-inline-block squad">
-              <i class="fa-brands fa-2x fa-html5 p-4"></i>
+              <i class="fa-brands fa-2x fa-html5 p-5"></i>
               <div>HTML5</div>
             </div>
             <div class="text-center d-inline-block squad">
-              <i class="fa-brands fa-2x fa-css3-alt p-4"></i>
+              <i class="fa-brands fa-2x fa-css3-alt p-5"></i>
               <div>CSS3</div>
             </div>
             <div class="text-center d-inline-block squad">
-              <i class="fa-brands fa-2x fa-bootstrap p-4"></i>
+              <i class="fa-brands fa-2x fa-bootstrap p-5"></i>
               <div>Bootstrap</div>
             </div>
           </b-col>
@@ -67,7 +67,6 @@
   @import 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css';
   .squad:hover{
     background-color: white;
-    padding: 1rem;
     border-radius: 1rem;
   }
 </style>
