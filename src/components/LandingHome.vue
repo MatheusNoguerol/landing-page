@@ -27,6 +27,10 @@
               <div>PHP</div>
             </div>
             <div class="text-center d-inline-block squad">
+              <i class="fa-solid fa-2x fa-database p-4"></i>
+              <div>MYSQL</div>
+            </div>
+            <div class="text-center d-inline-block squad">
               <i class="fa-brands fa-2x fa-js p-4"></i>
               <div>JavaScript</div>
             </div>
