@@ -60,7 +60,7 @@
                                 <b-list-group-item><i class="fa-solid fa-database"></i> MySql</b-list-group-item>
                             </b-list-group>
 
-                            <b-card-body>
+                            <b-card-body class="text-center">
                                 <a href="https://educaterracortesia.petpeloazul.com.br/" target="_blank" class="card-link">Site/Sistema</a>
                                 <a href="https://github.com/MatheusNoguerol/landing-page-pac-cortesia" target="_blank" class="card-link">Repositório</a>
                             </b-card-body>

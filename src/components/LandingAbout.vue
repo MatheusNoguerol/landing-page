@@ -1,7 +1,7 @@
 <template>
 <div>
     <section class="home-section container my-5">
-        <div class="container" style="padding-top: 35rem;">
+        <div class="container" style="padding-top: 15rem;">
             <b-row class="text-center">
                 <b-col>
                     <h2 class="mb-4 text-5 text-uppercase">sobre mim</h2>
