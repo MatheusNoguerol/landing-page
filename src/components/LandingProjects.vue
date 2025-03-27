@@ -1,3 +1,49 @@
+<script>
+    export default {
+        name: 'LandingProjects',
+        mounted() {
+            const myObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                } else {
+                    entry.target.classList.remove("show");
+                }
+                });
+            });
+
+            const elements = document.querySelectorAll(".hiddenElement");
+
+            elements.forEach((element) => myObserver.observe(element));
+
+            this.isSmallScreen = window.innerWidth < 768;
+
+            // Escuta o scroll da página
+            window.addEventListener("scroll", this.verificaSecaoAtual);
+
+            // Botão para ir para o topo
+            window.addEventListener("scroll", this.verificaBotaoTopo);
+        },
+        data() {
+            return {
+            projects: [
+                {
+                title: 'Project 1',
+                image: 'https://via.placeholder.com/600x400',
+                description: 'Description for project 1'
+                },
+                {
+                title: 'Project 2',
+                image: 'https://via.placeholder.com/600x400',
+                description: 'Description for project 2'
+                },
+                // Adicione mais projetos conforme necessário
+            ]
+            };
+        }
+    };
+</script>
+
 <template>
     <div>
         <section id="projetos">
@@ -10,8 +56,8 @@
             </div>
 
             <div class="container">
-                <div class="row">
-                    <div class="col-12 col-md-6 col-lg-3">
+                <div class="row logos">
+                    <div class="col-12 col-md-6 col-lg-3 hiddenElement">
                         <b-card no-body img-alt="Image" img-top class="mb-4">
                             <template #header>
                                 <img src="../../public/matheusDoTaxi.png" alt="programa matheus do taxi erp" class="img-fluid rounded"/>
@@ -40,7 +86,7 @@
                         </b-card>
                     </div>
 
-                    <div class="col-12 col-md-6 col-lg-3">
+                    <div class="col-12 col-md-6 col-lg-3 hiddenElement">
                         <b-card no-body img-alt="Image" img-top class="mb-4">
                             <template #header>
                                 <img src="../../public/educaTerraCortesia.png" alt="programa matheus do taxi erp" class="img-fluid rounded"/>
@@ -69,7 +115,7 @@
                         </b-card>
                     </div>
 
-                    <div class="col-12 col-md-6 col-lg-3">
+                    <div class="col-12 col-md-6 col-lg-3 hiddenElement">
                         <b-card no-body img-alt="Image" img-top class="mb-4">
                             <template #header>
                                 <img src="../../public/landingPage.png" alt="programa matheus do taxi erp" class="img-fluid rounded"/>
@@ -96,40 +142,60 @@
                             <b-card-footer class="text-center"><small>Acesse os links para melhor visualização!</small></b-card-footer>
                         </b-card>
                     </div>
+
+                    <div class="col-12 col-md-6 col-lg-3 hiddenElement">
+                        <b-card no-body img-alt="Image" img-top class="mb-4">
+                            <template #header>
+                                <img src="../../public/pacApp.png" alt="programa matheus do taxi erp" class="img-fluid rounded"/>
+                            </template>
+
+                            <b-card-body>
+                                <b-card-title class="text-center">PAC APP</b-card-title>
+                                <b-card-sub-title class="mb-4 text-center">APP mobile projeto agroecológico</b-card-sub-title>
+                                <b-card-text>
+                                    Uma rede social que busca unir a agroecologia e a tecnologia, de forma que seja atrativo e divertido melhorar nosso meio ambiente. APP em desenvolvimento! 
+                                </b-card-text>
+                            </b-card-body>
+
+                            <b-list-group flush>
+                                <b-list-group-item><i class="fa-brands fa-react"></i> React Native</b-list-group-item>
+                                <b-list-group-item><i class="fa-brands fa-js"></i> TypeScript</b-list-group-item>
+                                <b-list-group-item><i class="fa-brands fa-laravel"></i> Laravel</b-list-group-item>
+                                <b-list-group-item><i class="fa-solid fa-database"></i> MySql</b-list-group-item>
+                            </b-list-group>
+
+                            <b-card-footer class="text-center"><small>Para maiores informações entre em contato!</small></b-card-footer>
+                        </b-card>
+                    </div>
                 </div>
             </div>
         </section>
     </div>
 </template>
   
-<script>
-    export default {
-        name: 'LandingProjects',
-        data() {
-            return {
-            projects: [
-                {
-                title: 'Project 1',
-                image: 'https://via.placeholder.com/600x400',
-                description: 'Description for project 1'
-                },
-                {
-                title: 'Project 2',
-                image: 'https://via.placeholder.com/600x400',
-                description: 'Description for project 2'
-                },
-                // Adicione mais projetos conforme necessário
-            ]
-            };
-        }
-    };
-</script>
-  
 <style scoped>
-#carousel-projects {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-}
+    #carousel-projects {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .hiddenElement {
+        opacity: 0;
+        filter: blur(15px);
+        transition: all 2s;
+        transform: translateX(-100%);
+    }
+    .show {
+        opacity: 1;
+        filter: blur(0px);
+        transition: all 2s;
+        transform: translateX(0);
+    }
+    .logos *:nth-child(2) {
+        transition-delay: 200ms;
+    }
+    .logos *:nth-child(3) {
+        transition-delay: 300ms;
+    }
 </style>
   
