@@ -8,6 +8,19 @@ import './styles.css'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+// Ícones gratuitos
+import { faLaravel, faPhp, faVuejs, faNodeJs, faReact, faDocker, faGitAlt, faJs } from '@fortawesome/free-brands-svg-icons'
+import { faServer, faCubes } from '@fortawesome/free-solid-svg-icons'
+
+// Adiciona os ícones à library
+library.add(faLaravel, faPhp, faVuejs, faNodeJs, faReact, faDocker, faGitAlt, faJs, faServer, faCubes)
+
+// Registra o componente globalmente
+Vue.component('font-awesome-icon', FontAwesomeIcon)
+
 // Make BootstrapVue available throughout your project
 Vue.use(BootstrapVue)
 // Optionally install the BootstrapVue icon components plugin
