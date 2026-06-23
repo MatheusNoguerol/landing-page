@@ -1,3 +1,22 @@
+
+
+<script>
+  export default {
+    
+data() {
+    return {
+        marketplaces: [
+            { name: 'iFood', src: '/integracoes/marketplaces/ifood.jpg' },
+            { name: 'Shopee', src: '/integracoes/marketplaces/shopee.png' },
+            { name: 'Mercado Livre', src: '/integracoes/marketplaces/mercadolivre.png' },
+            { name: 'Nuvemshop', src: '/integracoes/marketplaces/nuvemshop.png' },
+            { name: 'Shopify', src: '/integracoes/marketplaces/shopify.png' }
+        ]
+    }
+}
+  }
+</script>
+
 <template>
     <section class="about-section container my-5">
         <div class="text-center mb-5">
@@ -51,6 +70,28 @@
             </div>
         </div>
 
+        <div class="row justify-content-center mb-5">
+    <div class="col-lg-10">
+      <div class="card border-0 shadow-sm p-4 p-md-5">
+        <h4 class="mb-4">Ecossistema de Marketplaces & E-commerce</h4>
+        
+        <p class="mb-4">
+          Desenvolvo integrações robustas que vão além da simples conexão. Implemento arquiteturas baseadas em <span style="font-weight: bold;">webhooks</span> para garantir 
+          a <span style="font-weight: bold;">sincronização em tempo real</span> de pedidos, controle rigoroso de estoque e atualização dinâmica de produtos. 
+          Gerencio toda a visibilidade do negócio através de <span style="font-weight: bold;">relatórios e fluxos automatizados.</span>
+        </p>
+
+        <div class="row align-items-center justify-content-center">
+  <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3" v-for="logo in marketplaces" :key="logo.name">
+    <div class="marketplace-card-v2">
+      <img :src="logo.src" :alt="logo.name">
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+  </div>
+
     </section>
 </template>
 
@@ -77,5 +118,36 @@
   font-weight: 300;
   color: #333;
   line-height: 1.6;
+}
+
+.marketplace-card-v2 {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  /* Altura fixa garante que todos os cards fiquem alinhados */
+  height: 100px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  border: 1px solid #eee;
+}
+
+.marketplace-card-v2 img {
+  /* Garante que a imagem não ultrapasse o card e mantenha a proporção */
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  filter: grayscale(0%);
+  transition: 0.3s;
+}
+
+.marketplace-card-v2:hover {
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.marketplace-card-v2:hover img {
+  filter: grayscale(0%);
 }
 </style>
