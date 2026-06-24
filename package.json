@@ -18,7 +18,8 @@
     "core-js": "^3.8.3",
     "devicons": "^1.8.0",
     "popper.js": "^1.16.1",
-    "vue": "^2.7.16"
+    "vue": "^2.7.16",
+    "vue-i18n": "^8.28.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

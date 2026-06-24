@@ -50,7 +50,7 @@
             <div class="container" style="padding-top: 10rem;">
                 <b-row class="text-center">
                     <b-col>
-                        <h2 class="mb-4 text-5 text-uppercase">PROJETOS</h2>
+                        <h2 class="mb-4 text-5 text-uppercase">{{ $t('projects.title') }}</h2>
                     </b-col>
                 </b-row>
             </div>
@@ -60,14 +60,14 @@
                     <div class="col-12 col-md-6 col-lg-3 hiddenElement d-flex py-4">
                         <b-card no-body img-alt="Image" img-top class="mb-4 project-card w-100">
                             <template #header>
-                                <img src="../../public/zoperandi.png" alt="programa matheus do taxi erp" class="img-fluid rounded"/>
+                                <img src="../../public/zoperandi.png" alt="zoperandi CRM" class="img-fluid rounded"/>
                             </template>
 
                             <b-card-body>
-                                <b-card-title class="text-center">Zoperandi</b-card-title>
-                                <b-card-sub-title class="mb-2 text-center">Landing Page de sistema CRM</b-card-sub-title>
+                                <b-card-title class="text-center">{{ $t('projects.items.zoperandi.title') }}</b-card-title>
+                                <b-card-sub-title class="mb-4 text-center">{{ $t('projects.items.zoperandi.subtitle') }}</b-card-sub-title>
                                 <b-card-text>
-                                    Landing page desenvolvida para a divulgação de um sistema de CRM (Customer Relationship Management), projetado e personalizado para atender pequenas e médias empresas, com foco em organização, produtividade e conversão.
+                                    {{ $t('projects.items.zoperandi.text') }}
                                 </b-card-text>
                             </b-card-body>
 
@@ -79,10 +79,10 @@
                             </b-list-group>
 
                             <b-card-body class="text-center">
-                                <a href="https://zoperandi.space/" target="_blank" class="card-link">Site</a>
+                                <a href="https://zoperandi.space/" target="_blank" class="card-link">{{ $t('projects.items.zoperandi.link') }}</a>
                             </b-card-body>
 
-                            <b-card-footer class="text-center"><small>Acesse os links para melhor visualização!</small></b-card-footer>
+                            <b-card-footer class="text-center"><small>{{ $t('projects.footer_tip') }}</small></b-card-footer>
                         </b-card>
                     </div>
 
@@ -93,10 +93,10 @@
                             </template>
 
                             <b-card-body>
-                                <b-card-title class="text-center">EDUCA TERRA CORTESIA</b-card-title>
-                                <b-card-sub-title class="mb-4 text-center">Gestão de cortesia em evento</b-card-sub-title>
+                                <b-card-title class="text-center">{{ $t('projects.items.educa_terra.title') }}</b-card-title>
+                                <b-card-sub-title class="mb-4 text-center">{{ $t('projects.items.educa_terra.subtitle') }}</b-card-sub-title>
                                 <b-card-text>
-                                    Aplicação desenvolvida para gerenciar e divulgar brindes distribuídos em eventos por meio de QR Code, em parceria com um projeto de agroecologia comunitário localizado no bairro onde resido.
+                                    {{ $t('projects.items.educa_terra.text') }}
                                 </b-card-text>
                             </b-card-body>
 
@@ -107,10 +107,10 @@
                             </b-list-group>
 
                             <b-card-body class="text-center">
-                                <a href="https://github.com/MatheusNoguerol/landing-page-pac-cortesia" target="_blank" class="card-link">Repositório</a>
+                                <a href="https://github.com/MatheusNoguerol/landing-page-pac-cortesia" target="_blank" class="card-link">{{ $t('projects.items.educa_terra.link') }}</a>
                             </b-card-body>
 
-                            <b-card-footer class="text-center"><small>Acesse os links para melhor visualização!</small></b-card-footer>
+                            <b-card-footer class="text-center"><small>{{ $t('projects.footer_tip') }}</small></b-card-footer>
                         </b-card>
                     </div>
 
@@ -121,10 +121,10 @@
                             </template>
 
                             <b-card-body>
-                                <b-card-title class="text-center">PORTFÓLIO PESSOAL</b-card-title>
-                                <b-card-sub-title class="mb-4 text-center">Apresentação de projetos</b-card-sub-title>
+                                <b-card-title class="text-center">{{ $t('projects.items.portfolio.title') }}</b-card-title>
+                                <b-card-sub-title class="mb-4 text-center">{{ $t('projects.items.portfolio.subtitle') }}</b-card-sub-title>
                                 <b-card-text>
-                                    Projeto desenvolvido para apresentar meus trabalhos de forma objetiva, permitindo a visualização rápida das aplicações em produção e o acesso direto aos respectivos repositórios de código.
+                                    {{ $t('projects.items.portfolio.text') }}
                                 </b-card-text>
                             </b-card-body>
 
@@ -135,10 +135,10 @@
                             </b-list-group>
 
                             <b-card-body class="text-center">
-                                <a href="https://github.com/MatheusNoguerol/landing-page" target="_blank" class="card-link">Repositório</a>
+                                <a href="https://github.com/MatheusNoguerol/landing-page" target="_blank" class="card-link">{{ $t('projects.items.portfolio.link') }}</a>
                             </b-card-body>
 
-                            <b-card-footer class="text-center"><small>Acesse os links para melhor visualização!</small></b-card-footer>
+                            <b-card-footer class="text-center"><small>{{ $t('projects.footer_tip') }}</small></b-card-footer>
                         </b-card>
                     </div>
 
@@ -149,10 +149,10 @@
                             </template>
 
                             <b-card-body>
-                                <b-card-title class="text-center">ISR</b-card-title>
-                                <b-card-sub-title class="mb-4 text-center">CRM personalizado</b-card-sub-title>
+                                <b-card-title class="text-center">{{ $t('projects.items.isr.title') }}</b-card-title>
+                                <b-card-sub-title class="mb-4 text-center">{{ $t('projects.items.isr.subtitle') }}</b-card-sub-title>
                                 <b-card-text>
-                                    CRM personalizado para a gestão de clientes, vendas, custos e agendamentos, desenvolvido sob medida para atender as necessidades específicas de uma empresa do setor de higienização.
+                                    {{ $t('projects.items.isr.text') }}
                                 </b-card-text>
                             </b-card-body>
 
@@ -164,10 +164,10 @@
                             </b-list-group>
 
                             <b-card-body class="text-center">
-                                <a href="https://isrhigienizacoes.com.br/" target="_blank" class="card-link">Site</a>
+                                <a href="https://isrhigienizacoes.com.br/" target="_blank" class="card-link">{{ $t('projects.items.isr.link') }}</a>
                             </b-card-body>
 
-                            <b-card-footer class="text-center"><small>Acesse os links para melhor visualização!</small></b-card-footer>
+                            <b-card-footer class="text-center"><small>{{ $t('projects.footer_tip') }}</small></b-card-footer>
                         </b-card>
                     </div>
 
@@ -178,10 +178,10 @@
                             </template>
 
                             <b-card-body>
-                                <b-card-title class="text-center">TOTALON</b-card-title>
-                                <b-card-sub-title class="mb-4 text-center">ERP completo para empresas de diversos ramos</b-card-sub-title>
+                                <b-card-title class="text-center">{{ $t('projects.items.totalon.title') }}</b-card-title>
+                                <b-card-sub-title class="mb-4 text-center">{{ $t('projects.items.totalon.subtitle') }}</b-card-sub-title>
                                 <b-card-text>
-                                    ERP completo voltado para empresas de diferentes segmentos, oferecendo recursos avançados de gestão financeira, controle de estoque, vendas e geração de relatórios personalizados.
+                                    {{ $t('projects.items.totalon.text') }}
                                 </b-card-text>
                             </b-card-body>
 
@@ -192,7 +192,7 @@
                                 <b-list-group-item><i class="fa-solid fa-database"></i> MySql</b-list-group-item>
                             </b-list-group>
 
-                            <b-card-footer class="text-center"><small>Para maiores informações entre em contato!</small></b-card-footer>
+                            <b-card-footer class="text-center"><small>{{ $t('projects.footer_contact') }}</small></b-card-footer>
                         </b-card>
                     </div>
 
@@ -203,10 +203,10 @@
                             </template>
 
                             <b-card-body>
-                                <b-card-title class="text-center">PAC APP</b-card-title>
-                                <b-card-sub-title class="mb-4 text-center">Aplicativo mobile de projeto agroecológico</b-card-sub-title>
+                                <b-card-title class="text-center">{{ $t('projects.items.pac_app.title') }}</b-card-title>
+                                <b-card-sub-title class="mb-4 text-center">{{ $t('projects.items.pac_app.subtitle') }}</b-card-sub-title>
                                 <b-card-text>
-                                    Aplicativo mobile em desenvolvimento que conecta agroecologia e tecnologia, promovendo a interação entre usuários de forma educativa e engajadora, com foco em impacto ambiental positivo.
+                                    {{ $t('projects.items.pac_app.text') }}
                                 </b-card-text>
                             </b-card-body>
 
@@ -217,7 +217,7 @@
                                 <b-list-group-item><i class="fa-solid fa-database"></i> MySql</b-list-group-item>
                             </b-list-group>
 
-                            <b-card-footer class="text-center"><small>Para maiores informações entre em contato!</small></b-card-footer>
+                            <b-card-footer class="text-center"><small>{{ $t('projects.footer_contact') }}</small></b-card-footer>
                         </b-card>
                     </div>
 
@@ -228,10 +228,10 @@
                             </template>
 
                             <b-card-body>
-                                <b-card-title class="text-center">APP Controle financeiro</b-card-title>
-                                <b-card-sub-title class="mb-4 text-center">Aplicativo IOS e Android</b-card-sub-title>
+                                <b-card-title class="text-center">{{ $t('projects.items.controle_fin.title') }}</b-card-title>
+                                <b-card-sub-title class="mb-4 text-center">{{ $t('projects.items.controle_fin.subtitle') }}</b-card-sub-title>
                                 <b-card-text>
-                                    Projeto piloto de um aplicativo mobile integrado a uma API própria, voltado ao controle financeiro pessoal, com geração de relatórios, visualização de dados e dashboards analíticos.
+                                    {{ $t('projects.items.controle_fin.text') }}
                                 </b-card-text>
                             </b-card-body>
 
@@ -242,7 +242,7 @@
                                 <b-list-group-item><i class="fa-solid fa-database"></i> MySql</b-list-group-item>
                             </b-list-group>
 
-                            <b-card-footer class="text-center"><small>Para maiores informações entre em contato!</small></b-card-footer>
+                            <b-card-footer class="text-center"><small>{{ $t('projects.footer_contact') }}</small></b-card-footer>
                         </b-card>
                     </div>
 
@@ -253,10 +253,10 @@
                             </template>
 
                             <b-card-body>
-                                <b-card-title class="text-center">API's</b-card-title>
-                                <b-card-sub-title class="mb-4 text-center">Application Programming Interface</b-card-sub-title>
+                                <b-card-title class="text-center">{{ $t('projects.items.apis.title') }}</b-card-title>
+                                <b-card-sub-title class="mb-4 text-center">{{ $t('projects.items.apis.subtitle') }}</b-card-sub-title>
                                 <b-card-text>
-                                    Desenvolvimento de APIs REST voltadas para aplicações web e mobile, focadas em organização de dados, desempenho, segurança e integração com diferentes plataformas.
+                                    {{ $t('projects.items.apis.text') }}
                                 </b-card-text>
                             </b-card-body>
 
@@ -265,7 +265,7 @@
                                 <b-list-group-item><i class="fa-solid fa-database"></i> MySql</b-list-group-item>
                             </b-list-group>
 
-                            <b-card-footer class="text-center"><small>Para maiores informações entre em contato!</small></b-card-footer>
+                            <b-card-footer class="text-center"><small>{{ $t('projects.footer_contact') }}</small></b-card-footer>
                         </b-card>
                     </div>
                 </div>

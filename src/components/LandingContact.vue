@@ -3,8 +3,8 @@
     <div class="container">
         <b-row class="text-center mb-5">
             <b-col>
-                <h2 class="text-5 text-uppercase mb-2">Fale comigo</h2>
-                <p class="text-muted mb-4">Entre em contato ou me encontre nas redes sociais</p>
+                <h2 class="text-5 text-uppercase mb-2">{{ $t('contact.title') }}</h2>
+                <p class="text-muted mb-4">{{ $t('contact.subtitle') }}</p>
             </b-col>
         </b-row>
 
@@ -12,13 +12,13 @@
             <b-col cols="auto" class="text-center">
                 <a href="https://github.com/MatheusNoguerol" target="_blank" class="contact-icon github">
                     <i class="fab fa-github fa-3x"></i>
-                    <p class="mt-2">GitHub</p>
+                    <p class="mt-2">{{ $t('contact.github') }}</p>
                 </a>
             </b-col>
             <b-col cols="auto" class="text-center">
                 <a href="https://www.linkedin.com/in/matheus-noguerol-7628a6253/" target="_blank" class="contact-icon linkedin">
                     <i class="fab fa-linkedin fa-3x"></i>
-                    <p class="mt-2">LinkedIn</p>
+                    <p class="mt-2">{{ $t('contact.linkedin') }}</p>
                 </a>
             </b-col>
         </b-row>
@@ -27,19 +27,19 @@
             <b-col cols="12" md="4">
                 <div class="info-card text-center">
                 <i class="fas fa-map-marker-alt fa-2x text-primary mb-2"></i>
-                <p class="mb-0">Rio de Janeiro / RJ</p>
+                <p class="mb-0">{{ $t('contact.location') }}</p>
                 </div>
             </b-col>
             <b-col cols="12" md="4">
                 <div class="info-card text-center">
                 <i class="fas fa-phone fa-2x text-primary mb-2"></i>
-                <p class="mb-0">(21) 96523-0293 (Whatsapp)</p>
+                <p class="mb-0">{{ $t('contact.phone') }}</p>
                 </div>
             </b-col>
             <b-col cols="12" md="4">
                 <div class="info-card text-center">
                 <i class="fas fa-envelope fa-2x text-primary mb-2"></i>
-                <p class="mb-0">matheusnoguerol15@gmail.com</p>
+                <p class="mb-0">{{ $t('contact.email') }}</p>
                 </div>
             </b-col>
         </b-row>

@@ -20,20 +20,17 @@ data() {
 <template>
     <section class="about-section container my-5">
         <div class="text-center mb-5">
-            <h2 class="text-uppercase font-weight-bold">Sobre Mim</h2>
-            <div class="divider mx-auto my-3"></div>
+            <h2 class="text-uppercase font-weight-bold">{{ $t('about.title') }}</h2>
+            <div class="mx-auto my-3"></div>
         </div>
 
         <div class="row justify-content-center mb-5">
             <div class="col-lg-10 about-card p-5">
                 <div class="about-content">
-                    <h3 class="mb-4">Construindo soluções com precisão técnica</h3>
-                    <p class="lead mb-4">
-                    Desenvolvedor <span style="font-weight: bold;">Full Stack</span> com mais de <span style="font-weight: bold;">4 anos de experiência</span>, especializado em transformar necessidades de negócio em soluções de alta performance.
-                    </p>
+                    <h3 class="mb-4">{{ $t('about.subtitle') }}</h3>
+                    <p class="lead mb-4" v-html="$t('about.desc1')"></p>
                     <p class="mb-0">
-                    Minha expertise abrange todo o ciclo de vida do software, com foco em arquiteturas escaláveis. 
-                    Atualmente, foco em <span style="font-weight: bold;">Soluções Financeiras, Automações Inteligentes e Integrações de Alta Disponibilidade</span>.
+                    {{ $t('about.desc2') }}
                     </p>
                 </div>
             </div>
@@ -41,25 +38,25 @@ data() {
 
         <div class="row justify-content-center mb-5">
             <div class="col-lg-10">
-                <h4 class="mb-4">Expertise em Integrações Críticas</h4>
+                <h4 class="mb-4">{{ $t('about.expertise') }}</h4>
                 <div class="row">
                     <div class="col-md-6 mb-4">
                         <div class="card h-100 border-0 shadow-sm p-4 text-center">
-                        <h5>Soluções Financeiras & Bancárias</h5>
-                        <p class="text-muted">Integrações robustas para gestão de pagamentos e transações.</p>
+                        <h5>{{ $t('about.finance.title') }}</h5>
+                        <p class="text-muted">{{ $t('about.finance.text') }}</p>
                         <div class="d-flex justify-content-center align-items-center gap-4 py-3">
                             <img src="../../public/integracoes/bancos/conjunto.png" alt="Itaú">
                         </div>
-                        <small class="text-primary font-weight-bold">Segurança e Confiabilidade máxima.</small>
+                        <small class="text-primary font-weight-bold">{{ $t('about.finance.tag') }}</small>
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
                         <div class="card h-100 border-0 shadow-sm p-4">
-                            <h5>Automação & Inteligência</h5>
+                            <h5>{{ $t('about.automation.title') }}</h5>
                             <ul class="list-unstyled">
-                                <li>✅ Automações de fluxo com <strong>n8n</strong></li>
-                                <li>✅ Integrações nativas com <strong>WhatsApp API</strong></li>
-                                <li>✅ Implementação de <strong>IA generativa</strong> no código</li>
+                                <li> <p v-html="$t('about.automation.item1')"></p></li>
+                                <li> <p v-html="$t('about.automation.item2')"></p></li>
+                                <li> <p v-html="$t('about.automation.item3')"></p></li>
                             </ul>
                             <div class="d-flex justify-content-center align-items-center gap-4 py-3">
                                 <img src="../../public/integracoes/conjuntoAut.png" alt="Itaú">
@@ -71,32 +68,29 @@ data() {
         </div>
 
         <div class="row justify-content-center mb-5">
-    <div class="col-lg-10">
-      <div class="card border-0 shadow-sm p-4 p-md-5">
-        <h4 class="mb-4">Ecossistema de Marketplaces & E-commerce</h4>
-        
-        <p class="mb-4">
-          Desenvolvo integrações robustas que vão além da simples conexão. Implemento arquiteturas baseadas em <span style="font-weight: bold;">webhooks</span> para garantir 
-          a <span style="font-weight: bold;">sincronização em tempo real</span> de pedidos, controle rigoroso de estoque e atualização dinâmica de produtos. 
-          Gerencio toda a visibilidade do negócio através de <span style="font-weight: bold;">relatórios e fluxos automatizados.</span>
-        </p>
+            <div class="col-lg-10">
+                <div class="card border-0 shadow-sm p-4 p-md-5">
+                    <h4 class="mb-4">{{ $t('about.marketplace.title') }}</h4>
+                    
+                    <p v-html="$t('about.marketplace.text')" class="mb-4"></p>
 
-        <div class="row align-items-center justify-content-center">
-  <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3" v-for="logo in marketplaces" :key="logo.name">
-    <div class="marketplace-card-v2">
-      <img :src="logo.src" :alt="logo.name">
-    </div>
-  </div>
-</div>
-      </div>
-    </div>
-  </div>
+                    <div class="row align-items-center justify-content-center">
+
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3" v-for="logo in marketplaces" :key="logo.name">
+
+                            <div class="marketplace-card-v2">
+                                <img :src="logo.src" :alt="logo.name">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </section>
 </template>
 
 <style scoped>
-.divider { width: 60px; height: 3px; background: #007bff; }
 .card { transition: transform 0.3s ease; }
 .card:hover { transform: translateY(-5px); }
 .gap-4 { gap: 1.5rem; }

@@ -4,6 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import './styles.css'
 
+import { i18n } from '../src/locales/i18n.js';
+
 // Import Bootstrap and BootstrapVue CSS files (order is important)
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -29,5 +31,6 @@ Vue.use(IconsPlugin)
 Vue.config.productionTip = false
 
 new Vue({
+    i18n,
   render: h => h(App),
 }).$mount('#app')

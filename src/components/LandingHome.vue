@@ -56,12 +56,9 @@ export default {
           :class="isSmallScreen ? 'text-center' : 'text-start'"
         >
             <b-col>
-                <h1>Olá 👋</h1>
-                <h2 id="apresentacao">Me chamo Matheus Noguerol</h2>
-                <p class="lead">
-                Desenvolvedor <strong>Full Stack</strong> focado em soluções web e mobile,
-                performance, integrações e produtos reais.
-                </p>
+                <h1>{{ $t('home.greeting') }}</h1>
+                <h2 id="apresentacao">{{ $t('home.presentation') }}</h2>
+                <p class="lead" v-html="$t('home.description')"></p>
             </b-col>
         </b-row>
 
